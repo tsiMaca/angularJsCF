@@ -1,0 +1,44 @@
+    <div class="container mt-4">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" href="#/post" role="tab" aria-controls="posts" aria-selected="true">Posts</a>
+
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/user" role="tab" aria-controls="users" aria-selected="true">Users</a>
+
+
+            </li>
+        </ul>
+
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Posts Tab Content -->
+            <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                <div class="p-3">
+                    
+                <div class="card" mb-3 ng-repeat="post in posts">
+                    <div class="card-body" >
+                    <h5 class="card-title text-danger">{{post.title}}</h5> 
+                        <p class="card-text"> {{post.body}}</p> 
+                    
+                    <a href="#post/{{post.id}}" class="card-link">LEER MAS</a>
+                    <a ng-click="removePost(post)" class="card-link text-danger">ELIMINAR</a>
+                    </div>
+                    
+                    
+                </div>
+                </div>
+            </div>
+
+
+            <!-- Users Tab Content -->
+            <div class="tab-pane fade " id="users" role="tabpanel" aria-labelledby="users-tab">
+                <div class="p-3">
+                    Hola musdsd
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="MyFirstApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primera Página con Angular JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
+    <script src="controller.js"></script>
+</head>
+<body ng-controller="FirstController">
+    {{nombre}}
+    <p><strong> Valor del Padre: </strong> {{$parent.nombre}}</p>
+    <div ng-controller="ChildController">
+       
+        <p><strong> Valor del Hijo: </strong> {{nombre}}</p>
+    </div>
+</body>
+</html>
+</html>

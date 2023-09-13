@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="mainModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Apply</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
+    <script> angular.module("mainModule", [])
+    .controller("FirstController", function ($scope) {
+        $scope.nombre ="Maca";
+        /* setTimeout(function(){
+            $scope.$apply(function(){
+                $scope.nombre = "Angular";
+            })
+        },200) */
+    })
+    function setup() {
+        var button = document.querySelector("#mi_boton");
+        button.addEventListener("click", function () {
+            var scope = angular.element(button).scope();
+            scope.$apply(function () {
+                scope.nombre = "Codigo facilito";
+                console.log("Updated scope:", scope);
+            });
+        });
+    }
+
+    // Trigger the setup function when the DOM is loaded
+    document.addEventListener("DOMContentLoaded", setup);
+    </script>
+    
+</head>
+<body ng-controller="FirstController">
+   
+    <h1>
+        {{nombre}}
+    </h1>
+    <button id="mi_boton">
+        Haz Click
+    </button>
+</body>
+</html>

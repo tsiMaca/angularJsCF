@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "angular-local-storage": "^0.7.1"
+  }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="CustomDirective">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ng-src y ng-cloak</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"> </script> 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="app.js"> </script> 
+    <style>
+        .circular{
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body ng-controller="AppCtrl">
+    <input type="text" my-autocomplete="repos" placeholder="Buscar repositorio">
+    <ul class="no-list" ng-cloak>
+        <li ng-repeat = "repo in repos">
+
+            <div class="circular" back-img="{{repo.owner.avatar_url}}"></div>
+            <h1> {{repo.name}}</h1>
+
+        </li>
+    </ul>
+</html>
